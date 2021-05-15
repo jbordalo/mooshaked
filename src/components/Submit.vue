@@ -2,7 +2,11 @@
     <div>
         <div class="submitWrapper">
             <textarea id="fileInput" v-model="input"> </textarea>
-            <input type="submit" @click.prevent="submitFile" />
+            <input
+                class="btn btn-primary"
+                type="submit"
+                @click.prevent="submitFile"
+            />
         </div>
     </div>
 </template>
@@ -21,6 +25,7 @@ export default {
         submitFile() {
             // console.log(this.input);
             this.updateFile(this.input);
+            this.$router.push("/result");
         },
     },
 };

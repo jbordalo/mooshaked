@@ -1,6 +1,7 @@
 #fileInput {
     width: 100%;
     min-height: 500px;
+    font-family: monospace;
 }
 
 input {
@@ -10,8 +11,3 @@ input {
 .submitWrapper {
     margin-bottom: 50px;
 }
-
-/* .errorWord {
-    color: white;
-    font-weight: bold;
-} */
