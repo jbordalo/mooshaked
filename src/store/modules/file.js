@@ -29,17 +29,16 @@ const mutations = {
 function parseLine(line) {
 	console.log("log: parsing line");
 
-	const parsedLine = line.replace(REGEX, "<span style=\"color: red; font-weight: bolder;\">$&</span>");
-	const errorStatus = line !== parsedLine;
+	const numErrors = ((line || '').match(REGEX) || []).length;
 
-	if (errorStatus) {
-		state.errorCounter++;
-	}
+	const parsedLine = line.replace(REGEX, "<span style=\"color: red; font-weight: bolder;\">$&</span>");
+
+	state.errorCounter += numErrors;
 
 	const lineObject = {
 		id: state.lineCounter++,
 		line: parsedLine,
-		error: errorStatus,
+		error: line !== parsedLine,
 	}
 
 	return lineObject;
