@@ -1,0 +1,17 @@
+#fileInput {
+    width: 100%;
+    min-height: 500px;
+}
+
+input {
+    float: right;
+}
+
+.submitWrapper {
+    margin-bottom: 50px;
+}
+
+/* .errorWord {
+    color: white;
+    font-weight: bold;
+} */
