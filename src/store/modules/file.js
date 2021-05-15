@@ -1,6 +1,7 @@
 const REGEX = /\w*[^\x00-\x7F]+\w*/g
 
 const state = {
+	rawText: "",
 	file: [],
 	errorCounter: 0,
 	lineCounter: 0
@@ -12,6 +13,9 @@ const getters = {
 	},
 	getErrors(state) {
 		return state.errorCounter;
+	},
+	getRawText(state) {
+		return state.rawText;
 	}
 }
 
@@ -19,8 +23,12 @@ const mutations = {
 	'UPDATE_FILE'(state, file) {
 		state.file = file;
 	},
+	'UPDATE_RAW_TEXT'(state, file) {
+		state.rawText = file;
+	},
 	'CLEAR_FILE'(state) {
 		state.file = [];
+		state.rawText = "";
 		state.errorCounter = 0;
 		state.lineCounter = 0;
 	}
@@ -52,7 +60,10 @@ const actions = {
 	updateFile: ({ commit }, file) => {
 		console.log("log: updating file");
 
-		commit('CLEAR_FILE')
+
+		commit('CLEAR_FILE');
+
+		commit('UPDATE_RAW_TEXT', file);
 
 		// Parse the file into lines
 		const newFile = parseFile(file);

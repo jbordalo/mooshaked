@@ -17,7 +17,7 @@ import { mapActions } from "vuex";
 
 export default {
     data() {
-        return { input: "" };
+        return { input: this.$store.getters.getRawText || "" };
     },
 
     methods: {
