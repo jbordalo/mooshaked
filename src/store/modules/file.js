@@ -1,4 +1,4 @@
-const REGEX = /\w*[áàéèíìóòúùãẽĩõũ]+\w*/
+const REGEX = /\w*[áàéèíìóòúùãẽĩõũ]+\w*/g
 
 const state = {
 	file: []

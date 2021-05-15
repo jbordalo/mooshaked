@@ -2,6 +2,7 @@ code {
     color: black;
     background-color: rgb(112, 195, 112);
     font-size: 20px;
+    white-space: pre-wrap;
 }
 
 .code--red {
