@@ -1,5 +1,7 @@
 <template>
     <div>
+        <p>Errors: {{ $store.getters.getErrors }}</p>
+
         <AppLine :key="line.id" v-for="line in file" :line="line"></AppLine>
     </div>
 </template>
@@ -19,5 +21,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped src="../assets/css/result.css">
 </style>

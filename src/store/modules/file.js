@@ -1,12 +1,17 @@
 const REGEX = /\w*[áàéèíìóòúùãẽĩõũ]+\w*/g
 
 const state = {
-	file: []
+	file: [],
+	errorCounter: 0,
+	lineCounter: 0
 }
 
 const getters = {
 	getFile(state) {
 		return state.file;
+	},
+	getErrors(state) {
+		return state.errorCounter;
 	}
 }
 
@@ -16,6 +21,8 @@ const mutations = {
 	},
 	'CLEAR_FILE'(state) {
 		state.file = [];
+		state.errorCounter = 0;
+		state.lineCounter = 0;
 	}
 }
 
@@ -23,11 +30,16 @@ function parseLine(line) {
 	console.log("log: parsing line");
 
 	const parsedLine = line.replace(REGEX, "<span style=\"color: red; font-weight: bolder;\">$&</span>");
+	const errorStatus = line !== parsedLine;
+
+	if (errorStatus) {
+		state.errorCounter++;
+	}
 
 	const lineObject = {
-		id: state.file.length,
+		id: state.lineCounter++,
 		line: parsedLine,
-		error: line !== parsedLine,
+		error: errorStatus,
 	}
 
 	return lineObject;

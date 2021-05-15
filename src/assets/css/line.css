@@ -8,3 +8,9 @@ code {
 .code--red {
     background-color: rgb(246, 151, 151);
 }
+
+p {
+    font-family: monospace;
+    margin-right: 15px;
+    float: left;
+}
