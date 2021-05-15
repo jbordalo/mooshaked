@@ -1,13 +1,13 @@
 <template>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <img
+            <!-- <img
                 style="margin-top: 10px"
                 src="../assets/img/mooshaked.png"
                 alt="#"
                 height="300"
                 width="100%"
-            />
+            /> -->
             <div class="navbar-header">
                 <router-link to="/" class="navbar-brand">Mooshaked</router-link>
             </div>
