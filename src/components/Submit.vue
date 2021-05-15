@@ -1,10 +1,11 @@
 <template>
     <div>
         <div class="submitWrapper">
-            <textarea id="fileInput" v-model="input"> </textarea>
+            <textarea id="fileInput" v-model="input"></textarea>
             <input
                 class="btn btn-primary"
                 type="submit"
+                :disabled="!isInputValid"
                 @click.prevent="submitFile"
             />
         </div>
@@ -25,6 +26,11 @@ export default {
         submitFile() {
             this.updateFile(this.input);
             this.$router.push("/result");
+        },
+    },
+    computed: {
+        isInputValid() {
+            return this.input.trim() !== "";
         },
     },
 };
