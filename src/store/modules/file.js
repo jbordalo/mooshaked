@@ -1,4 +1,4 @@
-const REGEX = /\w*[áàéèíìóòúùãẽĩõũ]+\w*/g
+const REGEX = /\w*[^\x00-\x7F]+\w*/g
 
 const state = {
 	file: [],
