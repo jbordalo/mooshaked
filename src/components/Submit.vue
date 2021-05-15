@@ -23,7 +23,6 @@ export default {
         ...mapActions(["updateFile"]),
 
         submitFile() {
-            // console.log(this.input);
             this.updateFile(this.input);
             this.$router.push("/result");
         },

@@ -30,8 +30,6 @@ function parseLine(line) {
 		error: line !== parsedLine,
 	}
 
-	console.log("Line:", lineObject);
-
 	return lineObject;
 }
 
@@ -42,12 +40,11 @@ function parseFile(file) {
 const actions = {
 	updateFile: ({ commit }, file) => {
 		console.log("log: updating file");
-		// Parse the file into lines
 
 		commit('CLEAR_FILE')
 
+		// Parse the file into lines
 		const newFile = parseFile(file);
-		console.log("file: ", newFile);
 
 		commit('UPDATE_FILE', newFile);
 	}
