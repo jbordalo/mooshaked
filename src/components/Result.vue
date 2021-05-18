@@ -2,7 +2,12 @@
     <div>
         <p>Errors: {{ $store.getters.getErrors }}</p>
 
-        <AppLine :key="line.id" v-for="line in file" :line="line"></AppLine>
+        <AppLine
+            :key="line.id"
+            v-for="line in file"
+            :line="line"
+            :numLines="file.length"
+        ></AppLine>
     </div>
 </template>
 
