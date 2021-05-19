@@ -1,5 +1,8 @@
 const REGEX = /\w*[^\x00-\x7F]+\w*/g
+const SPACE = /[ ]/g
 const TAB = /\t/g
+const HTML_SPACE = "&nbsp;"
+const HTML_TAB = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
 const state = {
 	rawText: "",
@@ -42,9 +45,11 @@ function parseLine(line) {
 
 	let parsedLine = line.trimEnd()
 
-	parsedLine = parsedLine.replace(REGEX, "<span style=\"color: #c20000; font-weight: bolder;\">$&</span>");
+	parsedLine = parsedLine.replace(SPACE, HTML_SPACE)
 
-	parsedLine = parsedLine.replace(TAB, "&nbsp;&nbsp;&nbsp;&nbsp;");
+	parsedLine = parsedLine.replace(REGEX, "<span style=\"color: #c20000;font-weight: bolder;\">$&</span>");
+
+	parsedLine = parsedLine.replace(TAB, HTML_TAB);
 
 	state.errorCounter += numErrors;
 
@@ -71,6 +76,8 @@ const actions = {
 
 		// Parse the file into lines
 		const newFile = parseFile(file);
+
+		console.log(newFile);
 
 		commit('UPDATE_FILE', newFile);
 	}
