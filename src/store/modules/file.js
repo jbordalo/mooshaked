@@ -77,8 +77,6 @@ const actions = {
 		// Parse the file into lines
 		const newFile = parseFile(file);
 
-		console.log(newFile);
-
 		commit('UPDATE_FILE', newFile);
 	}
 }

@@ -1,20 +1,21 @@
 #fileInput {
-    width: 99.4%;
+    width: 100%;
     min-height: 500px;
     font-family: monospace;
-    /* margin-top: 20px; TODO */
-    margin-bottom: 5px;
+    float: right;
+    margin-bottom: 6px;
 }
 
 input {
     color: #282a36;
-    border-radius: 3px;
+    border-radius: 8px;
     border: none;
+    font-size: 17px;
     font-weight: bold;
     font-family: monospace;
     background-color: #8be9fd;
     float: right;
-    padding: 5px 5px 5px 5px;
+    padding: 8px;
 }
 
 input:hover {
@@ -29,9 +30,21 @@ textarea::-webkit-scrollbar {
 textarea {
     background-color: #44475a;
     color: #f8f8f2;
+    border-width: 0px;
+    border-radius: 8px;
+    padding: 15px;
     resize: none;
     /* Mozilla */
     overflow: -moz-scrollbars-none;
     /* IE */
     -ms-overflow-style: none;
+}
+
+/* Smooth outline with box-shadow: */
+textarea:focus {
+    box-shadow: 0 0 0 1px #8be9fd;
+}
+
+textarea:focus-visible {
+    outline: none;
 }
