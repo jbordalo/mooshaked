@@ -1,14 +1,12 @@
 <template>
     <div>
-        <div class="submitWrapper">
-            <textarea id="fileInput" v-model="input"></textarea>
-            <input
-                class="btn btn-primary"
-                type="submit"
-                :disabled="!isInputValid"
-                @click.prevent="submitFile"
-            />
-        </div>
+        <textarea id="fileInput" v-model="input"></textarea>
+        <input
+            class="btn btn-primary"
+            type="submit"
+            :disabled="!isInputValid"
+            @click.prevent="submitFile"
+        />
     </div>
 </template>
 

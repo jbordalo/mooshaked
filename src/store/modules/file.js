@@ -1,4 +1,5 @@
 const REGEX = /\w*[^\x00-\x7F]+\w*/g
+const TAB = /\t/g
 
 const state = {
 	rawText: "",
@@ -39,14 +40,18 @@ function parseLine(line) {
 
 	const numErrors = ((line || '').match(REGEX) || []).length;
 
-	const parsedLine = line.replace(REGEX, "<span style=\"color: red; font-weight: bolder;\">$&</span>");
+	let parsedLine = line.trimEnd()
+
+	parsedLine = parsedLine.replace(REGEX, "<span style=\"color: #c20000; font-weight: bolder;\">$&</span>");
+
+	parsedLine = parsedLine.replace(TAB, "&nbsp;&nbsp;&nbsp;&nbsp;");
 
 	state.errorCounter += numErrors;
 
 	const lineObject = {
 		id: state.lineCounter++,
 		line: parsedLine,
-		error: line !== parsedLine,
+		error: numErrors > 0,
 	}
 
 	return lineObject;
@@ -59,7 +64,6 @@ function parseFile(file) {
 const actions = {
 	updateFile: ({ commit }, file) => {
 		console.log("log: updating file");
-
 
 		commit('CLEAR_FILE');
 

@@ -1,8 +1,17 @@
+.wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
 code {
-    color: black;
-    background-color: rgb(112, 195, 112);
+    font-family: monospace;
+    height: 100%;
+    /* width: 100%; */
+    color: #282a36;
+    border-radius: 3px;
+    background-color: #50fa7b;
     font-size: 20px;
-    white-space: pre-wrap;
+    white-space: nowrap;
 }
 
 .code--red {
@@ -10,7 +19,10 @@ code {
 }
 
 p {
+    font-size: 15px;
     font-family: monospace;
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     float: left;
 }

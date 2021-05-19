@@ -1,13 +1,37 @@
 #fileInput {
-    width: 100%;
+    width: 99.4%;
     min-height: 500px;
     font-family: monospace;
+    /* margin-top: 20px; TODO */
+    margin-bottom: 5px;
 }
 
 input {
+    color: #282a36;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: #8be9fd;
     float: right;
+    padding: 5px 5px 5px 5px;
 }
 
-.submitWrapper {
-    margin-bottom: 50px;
+input:hover {
+    background-color: #10cef8;
+    cursor: pointer;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+textarea {
+    background-color: #44475a;
+    color: #f8f8f2;
+    resize: none;
+    /* Mozilla */
+    overflow: -moz-scrollbars-none;
+    /* IE */
+    -ms-overflow-style: none;
 }

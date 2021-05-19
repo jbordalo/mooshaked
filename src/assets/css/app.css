@@ -1,0 +1,54 @@
+body {
+    font-family: monospace;
+    background-color: #282a36;
+    color: #f8f8f2;
+    padding-top: 30px;
+}
+
+.component {
+    width: 100%;
+    margin-top: 20px;
+}
+
+main {
+    width: 100%;
+}
+
+.content {
+    max-width: 75em;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-enter-active {
+    animation: slide-in 200ms ease-out forwards;
+}
+
+.slide-leave-active {
+    animation: slide-out 200ms ease-out forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+}

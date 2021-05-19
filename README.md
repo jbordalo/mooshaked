@@ -27,3 +27,4 @@ Check for invalid characters in your program before you submit it to Mooshak.
 ## Authors
 
 -   **João Bordalo** - _Initial work_ - [jbordalo](https://github.com/jbordalo)
+-   **Tiago Teles** - _Styling_ - [ttmx](https://github.com/ttmx)

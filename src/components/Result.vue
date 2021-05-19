@@ -2,6 +2,8 @@
     <div>
         <p>Errors: {{ $store.getters.getErrors }}</p>
 
+        <hr />
+
         <AppLine
             :key="line.id"
             v-for="line in file"

@@ -8,6 +8,7 @@
             Try it out, <router-link to="/submit"><a>submit</a></router-link>
             your code
         </p>
+        <p>We will find non-ASCII occurences</p>
         <hr />
     </div>
 </template>

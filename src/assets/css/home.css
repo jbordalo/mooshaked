@@ -1,4 +1,17 @@
 #compileTimeError {
-    color: red;
+    color: #ff5555;
     font-weight: bold;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+a {
+    color: #8be9fd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #10cef8;
 }

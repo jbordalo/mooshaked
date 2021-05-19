@@ -1,3 +1,8 @@
 p {
-    font-family: monospace;
+    margin-top: 0px;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
